@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Love, Always &mdash; Our Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Dancing+Script:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Ambient falling petals, sit behind everything -->
+<div class="petal-field" id="petalField" aria-hidden="true"></div>
+
+<!-- ================= GATE PAGE ================= -->
+<section id="gate" class="page gate-page active">
+  <div class="rose-scene">
+    <div class="rose-container">
+      <div class="rose">
+        <div class="petal p1"></div>
+        <div class="petal p2"></div>
+        <div class="petal p3"></div>
+        <div class="petal p4"></div>
+        <div class="petal p5"></div>
+        <div class="petal p6"></div>
+        <div class="petal p7"></div>
+        <div class="petal p8"></div>
+        <div class="petal p9"></div>
+        <div class="petal p10"></div> 
+        <div class="rose-core"></div>
+      </div>
+      <div class="stem">
+        <div class="leaf leaf-left"></div>
+        <div class="leaf leaf-right"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gate-content">
+    <p class="eyebrow">a small world, made of just us</p>
+    <h1 class="gate-title">Its Us</h1>
+    <p class="gate-sub">Some doors only open for one person.<br>Type the words, and step inside.</p>
+
+    <form id="gateForm" class="gate-form" autocomplete="off">
+      <input
+        id="gateInput"
+        type="text"
+        placeholder= &ldquo; &rdquo;
+        aria-label="Type My Love to enter"
+      />
+      <button type="submit" class="gate-btn">Enter</button>
+    </form>
+    <p id="gateHint" class="gate-hint">hint: it's what I call you</p>
+  </div>
+</section>
+
+<!-- ================= MAIN SITE ================= -->
+<div id="site" class="site">
+
+  <nav class="ribbon-nav">
+    <div class="nav-inner">
+      <button class="nav-rose" data-target="home" aria-label="Home">
+        <span class="mini-rose"></span>
+      </button>
+      <button class="nav-link active" data-target="home">Home</button>
+      <button class="nav-link" data-target="timeline">Our Time</button>
+      <button class="nav-link" data-target="gallery">Our Memories</button>
+      <button class="nav-link" data-target="letter">Love Letter</button>
+    </div>
+  </nav>
+
+  <!-- ---------- HOME ---------- -->
+  <section id="home" class="page site-page active">
+    <div class="home-hero">
+      <p class="eyebrow">May 21, 2023 &mdash; forever</p>
+      <h1 class="hero-title">To My Love,</h1>
+      <p class="hero-text">
+        Every love story is beautiful, but ours is my favorite.
+        This little page holds our time, our memories, and everything
+        my heart has been meaning to tell you.
+      </p>
+      <button class="cta-btn" data-target="timeline">See how long I've loved you &rarr;</button>
+    </div>
+    <div class="home-rose-deco">
+      <div class="rose small-rose">
+        <div class="petal p1"></div>
+        <div class="petal p2"></div>
+        <div class="petal p3"></div>
+        <div class="petal p4"></div>
+        <div class="petal p5"></div>
+        <div class="petal p6"></div>
+        <div class="rose-core"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- TIMELINE / CALENDAR ---------- -->
+  <section id="timeline" class="page site-page">
+    <div class="section-head">
+      <p class="eyebrow">since May 21, 2023</p>
+      <h2 class="section-title">Every Day, Counted</h2>
+      <p class="section-sub">Not because I need a number to know it &mdash; but because I like watching it grow.</p>
+    </div>
+
+    <div class="counter-row">
+      <div class="counter-card">
+        <span class="counter-num" id="countYears">0</span>
+        <span class="counter-label">Years</span>
+      </div>
+      <div class="counter-card">
+        <span class="counter-num" id="countMonths">0</span>
+        <span class="counter-label">Months</span>
+      </div>
+      <div class="counter-card">
+        <span class="counter-num" id="countDays">0</span>
+        <span class="counter-label">Days</span>
+      </div>
+    </div>
+
+    <p class="total-days">That's <span id="totalDays">0</span> days, 27,768 hours, 1,666,080 minutes, 99,964,800 seconds of choosing you. Every single one of them.</p>
+
+    <div class="timeline-strip" id="timelineStrip">
+      <!-- milestone dots injected by script.js -->
+    </div>
+
+    <div class="mini-calendar" id="miniCalendar">
+      <!-- current month calendar injected by script.js, anniversary date highlighted -->
+    </div>
+  </section>
+
+  <!-- ---------- GALLERY ---------- -->
+  <section id="gallery" class="page site-page">
+    <div class="section-head">
+      <p class="eyebrow">proof that it happened</p>
+      <h2 class="section-title">Our Memories</h2>
+      <p class="section-sub">Here are some of our pictures together.</p>
+    </div>
+
+    <div class="gallery-grid">
+  <figure class="frame frame-1" onclick="openLightbox(this)">
+    <img src="img/first.jpg" alt="A memory of us" />
+    <figcaption>The day our story quietly began.</figcaption>
+  </figure>
+  <figure class="frame frame-2" onclick="openLightbox(this)">
+    <img src="img/second.png" alt="A memory of us" />
+    <figcaption>In your eyes, I always find my favorite place.</figcaption>
+  </figure>
+  <figure class="frame frame-3" onclick="openLightbox(this)">
+    <img src="img/tird.jpg" alt="A memory of us" />
+    <figcaption>Every sunset felt more beautiful with you beside me.</figcaption>
+  </figure>
+  <figure class="frame frame-4" onclick="openLightbox(this)">
+    <img src="img/fort.jpg" alt="A memory of us" />
+    <figcaption>Just us, making simple moments unforgettable.</figcaption>
+  </figure>
+  <figure class="frame frame-5" onclick="openLightbox(this)">
+    <img src="img/pift.jpg" alt="A memory of us" />
+    <figcaption>Watching you chase your dreams is one of my greatest joys.</figcaption>
+  </figure>
+  <figure class="frame frame-6" onclick="openLightbox(this)">
+    <img src="img/sixd.jpg" alt="A memory of us" />
+    <figcaption>No matter where life takes us, you'll always feel like home.</figcaption>
+  </figure>
+</div>
+  </section>
+
+  <!-- ---------- LOVE LETTER ---------- -->
+  <section id="letter" class="page site-page">
+    <div class="section-head">
+      <p class="eyebrow">3 years &amp; 2 months of us</p>
+      <h2 class="section-title">A Letter, Just for You</h2>
+      <p class="section-sub">Click the seal to open it.</p>
+    </div>
+
+    <div class="envelope-scene">
+      <div class="envelope" id="envelope">
+        <div class="envelope-back"></div>
+        <div class="envelope-letter" id="envelopeLetter">
+          <div class="letter-paper">
+            <p class="letter-line">My Love,</p>
+            <p>
+              Every day with you is a gift that I never take for granted.
+              Tdaa! hehe hi pretty gorjas wifey,
+              again Happy 3yrs and 2 months of love. I love you, and remember I always do 
+            </p>
+            <p>
+              Thank you for every laugh, every argument we grew from, every
+              quiet night that felt louder than words. You didn't just stay.
+              You chose me, again and again, and I will never stop being
+              grateful for that.
+            </p>
+            <p class="letter-sign">Forever yours,<br><span>Maymay</span></p>
+          </div>
+        </div>
+        <div class="envelope-front">
+          <div class="envelope-flap"></div>
+          <div class="wax-seal" id="waxSeal">
+            <span class="seal-heart"></span>
+          </div>
+        </div>
+      </div>
+      <p class="envelope-hint" id="envelopeHint">tap the seal</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- Lightbox for gallery -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightboxImg" src="" alt="Memory, enlarged" />
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
